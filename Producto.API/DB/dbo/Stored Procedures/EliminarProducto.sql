@@ -1,0 +1,12 @@
+﻿CREATE PROCEDURE EliminarProducto
+	        @Id uniqueidentifier
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRANSACTION
+
+	DELETE FROM Producto WHERE (Id = @Id)
+
+	SELECT @Id
+	COMMIT TRANSACTION
+END
