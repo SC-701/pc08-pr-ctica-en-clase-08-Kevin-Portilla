@@ -20,7 +20,7 @@ namespace Servicios
         public async Task<TipoCambio> ObtenerTipoCambio(DateTime fecha)
         {
             var endPoint = _configuracion.ObtenerMetodo("ApiEndPointTipoCambio", "ObtenerTipoCambioVenta");
-            var token = _configuracion.ObtenerValor("Token");
+            var token = _configuracion.ObtenerValor("TokenBCR");
 
             var cliente = _httpClient.CreateClient("ServicioTipoCambio");
             cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);

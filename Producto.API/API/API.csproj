@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autorizacion.Abstracciones.kportilla" Version="2.0.5" />
+    <PackageReference Include="Autorizacion.DA.kportilla" Version="2.0.5" />
+    <PackageReference Include="Autorizacion.Flujo.kportilla" Version="2.0.5" />
+    <PackageReference Include="Autorizacion.Middleware.kportilla" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.25" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
