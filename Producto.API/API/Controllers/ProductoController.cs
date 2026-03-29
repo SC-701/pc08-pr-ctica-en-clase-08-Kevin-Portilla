@@ -22,7 +22,7 @@ namespace API.Controllers
 
         [HttpPost]
         [Authorize(Roles = "2")]
-        public async Task<IActionResult> Agregar(ProductoRequest producto)
+        public async Task<IActionResult> Agregar([FromBody] ProductoRequest producto)
         {
             var resultado = await _productoFlujo.Agregar(producto);
             return CreatedAtAction(nameof(Obtener), new { Id = resultado }, null);
@@ -30,7 +30,7 @@ namespace API.Controllers
 
         [HttpPut("{Id}")]
         [Authorize(Roles = "1,2")]
-        public async Task<IActionResult> Editar(Guid Id, ProductoRequest producto)
+        public async Task<IActionResult> Editar([FromRoute] Guid Id, ProductoRequest producto)
         {
             var resultado = await _productoFlujo.Editar(Id, producto);
             return Ok(resultado);
@@ -38,7 +38,7 @@ namespace API.Controllers
 
         [HttpDelete("{Id}")]
         [Authorize(Roles = "1,2")]
-        public async Task<IActionResult> Eliminar(Guid Id)
+        public async Task<IActionResult> Eliminar([FromRoute] Guid Id)
         {
             var resultado = await _productoFlujo.Eliminar(Id);
             return NoContent();
