@@ -29,7 +29,7 @@ namespace API.Controllers
         }
 
         [HttpPut("{Id}")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public async Task<IActionResult> Editar(Guid Id, ProductoRequest producto)
         {
             var resultado = await _productoFlujo.Editar(Id, producto);
@@ -37,7 +37,7 @@ namespace API.Controllers
         }
 
         [HttpDelete("{Id}")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public async Task<IActionResult> Eliminar(Guid Id)
         {
             var resultado = await _productoFlujo.Eliminar(Id);
@@ -45,7 +45,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public async Task<IActionResult> Obtener()
         {
             var resultado = await _productoFlujo.Obtener();
@@ -55,7 +55,7 @@ namespace API.Controllers
         }
 
         [HttpGet("obtenerPorId/{Id}")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public async Task<IActionResult> Obtener([FromRoute] Guid Id)
         {
             var resultado = await _productoFlujo.Obtener(Id);
